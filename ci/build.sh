@@ -8,3 +8,4 @@ ln -s ${M2_CACHE} ${M2_HOME}
 mvn clean install -f sources
 
 cp -R sources/target/*.jar build_output/
+cp sources/Dockerfile build_output/
