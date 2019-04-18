@@ -12,9 +12,10 @@ public class BoardGame {
 	private int minPlayers;
 	private int maxPlayers;
 	private List<GameMechanic> gameMechanics;
+	private int bggId;
 
 	public BoardGame(final UUID id, final String title, final String author, final String publisher, final int minPlayers, final int maxPlayers,
-		final List<GameMechanic> gameMechanics) {
+		final List<GameMechanic> gameMechanics, final int bggId) {
 
 		this.id = id;
 		this.title = title;
@@ -23,6 +24,7 @@ public class BoardGame {
 		this.minPlayers = minPlayers;
 		this.maxPlayers = maxPlayers;
 		this.gameMechanics = Collections.unmodifiableList(gameMechanics);
+		this.bggId = bggId;
 	}
 
 	public UUID getId() {
@@ -51,5 +53,9 @@ public class BoardGame {
 
 	public List<GameMechanic> getGameMechanics() {
 		return gameMechanics;
+	}
+
+	public int getBggId() {
+		return bggId;
 	}
 }

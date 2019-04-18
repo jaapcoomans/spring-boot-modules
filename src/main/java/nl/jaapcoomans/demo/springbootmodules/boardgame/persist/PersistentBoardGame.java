@@ -53,8 +53,8 @@ public class PersistentBoardGame {
 			this.publisher,
 			this.minPlayers,
 			this.maxPlayers,
-			this.gameMechanics
-		);
+			this.gameMechanics,
+			bggId);
 	}
 
 	public UUID getId() {

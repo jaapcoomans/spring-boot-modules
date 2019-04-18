@@ -3,7 +3,6 @@ package nl.jaapcoomans.demo.springbootmodules.boardgame.bgg;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.stream.Stream;
 
 import nl.jaapcoomans.demo.springbootmodules.boardgame.bgg.xmlapi.BigDecimalValue;
@@ -11,6 +10,7 @@ import nl.jaapcoomans.demo.springbootmodules.boardgame.bgg.xmlapi.ItemWithStatis
 import nl.jaapcoomans.demo.springbootmodules.boardgame.bgg.xmlapi.Items;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.bgg.xmlapi.Statistics;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.bgg.xmlapi.Statistics.Ratings;
+import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGame;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.GameRatingService;
 
 import feign.Feign;
@@ -41,9 +41,8 @@ public class BoardGameGeekRatingService implements GameRatingService {
 	}
 
 	@Override
-	public Optional<BigDecimal> getAverageRating(final UUID gameId) {
-		int bggId = this.resolveBggId(gameId);
-		Optional<Items> items = Optional.ofNullable(this.bggClient.getItemsWithRating(bggId));
+	public Optional<BigDecimal> getAverageRating(final BoardGame boardGame) {
+		Optional<Items> items = Optional.ofNullable(this.bggClient.getItemsWithRating(boardGame.getBggId()));
 
 		return items
 			.map(Items::getItems)
@@ -53,10 +52,5 @@ public class BoardGameGeekRatingService implements GameRatingService {
 			.map(Statistics::getRatings)
 			.map(Ratings::getAverage)
 			.map(BigDecimalValue::getValue);
-	}
-
-	private int resolveBggId(UUID gameId) {
-		//TODO: Implement mapping properly
-		return 0;
 	}
 }

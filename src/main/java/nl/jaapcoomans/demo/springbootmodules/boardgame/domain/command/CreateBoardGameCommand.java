@@ -56,7 +56,7 @@ public class CreateBoardGameCommand {
 			this.publisher,
 			this.minPlayers,
 			this.maxPlayers,
-			this.gameMechanics
-		);
+			this.gameMechanics,
+			bggId);
 	}
 }
