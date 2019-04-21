@@ -6,6 +6,7 @@ import java.util.UUID;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGame;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGameQueryRepository;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGameService;
+import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.GameRatingService;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.command.CreateBoardGameCommand;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,10 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class BoardGameRestApi {
 	private BoardGameQueryRepository boardGameQueryRepository;
 	private BoardGameService boardGameService;
+	private GameRatingService gameRatingService;
 
-	public BoardGameRestApi(final BoardGameQueryRepository boardGameQueryRepository, final BoardGameService boardGameService) {
+	public BoardGameRestApi(final BoardGameQueryRepository boardGameQueryRepository, final BoardGameService boardGameService,
+		final GameRatingService gameRatingService) {
+
 		this.boardGameQueryRepository = boardGameQueryRepository;
 		this.boardGameService = boardGameService;
+		this.gameRatingService = gameRatingService;
 	}
 
 	@GetMapping
@@ -40,5 +45,12 @@ public class BoardGameRestApi {
 	@PostMapping
 	public BoardGame createNewBoardGame(@RequestBody CreateBoardGameCommand createCommand) {
 		return this.boardGameService.createNewBoardGame(createCommand);
+	}
+
+	@GetMapping("/{gameId}/ratings")
+	public Ratings getRatingsById(@PathVariable UUID gameId) {
+		return this.gameRatingService.getAverageRating(gameId)
+			.map(Ratings::new)
+			.orElseThrow(ResourceNotFoundException::new);
 	}
 }

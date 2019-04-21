@@ -13,15 +13,17 @@ public class CreateBoardGameCommand {
 	private int minPlayers;
 	private int maxPlayers;
 	private List<GameMechanic> gameMechanics;
+	private Integer boardGameGeekId;
 
 	public CreateBoardGameCommand(final String title, final String publisher, final String author, final int minPlayers, final int maxPlayers,
-		final List<GameMechanic> gameMechanics) {
+		final List<GameMechanic> gameMechanics, final Integer boardGameGeekId) {
 		this.title = title;
 		this.publisher = publisher;
 		this.author = author;
 		this.minPlayers = minPlayers;
 		this.maxPlayers = maxPlayers;
 		this.gameMechanics = gameMechanics;
+		this.boardGameGeekId = boardGameGeekId;
 	}
 
 	public String getTitle() {
@@ -48,6 +50,10 @@ public class CreateBoardGameCommand {
 		return gameMechanics;
 	}
 
+	public Integer getBoardGameGeekId() {
+		return boardGameGeekId;
+	}
+
 	public BoardGame execute() {
 		return new BoardGame(
 			UUID.randomUUID(),
@@ -57,6 +63,6 @@ public class CreateBoardGameCommand {
 			this.minPlayers,
 			this.maxPlayers,
 			this.gameMechanics,
-			bggId);
+			this.boardGameGeekId);
 	}
 }

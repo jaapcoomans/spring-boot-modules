@@ -2,6 +2,7 @@ package nl.jaapcoomans.demo.springbootmodules.boardgame.domain;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public class BoardGame {
@@ -12,10 +13,10 @@ public class BoardGame {
 	private int minPlayers;
 	private int maxPlayers;
 	private List<GameMechanic> gameMechanics;
-	private int bggId;
+	private Integer boardGameGeekId;
 
 	public BoardGame(final UUID id, final String title, final String author, final String publisher, final int minPlayers, final int maxPlayers,
-		final List<GameMechanic> gameMechanics, final int bggId) {
+		final List<GameMechanic> gameMechanics, final Integer boardGameGeekId) {
 
 		this.id = id;
 		this.title = title;
@@ -24,7 +25,7 @@ public class BoardGame {
 		this.minPlayers = minPlayers;
 		this.maxPlayers = maxPlayers;
 		this.gameMechanics = Collections.unmodifiableList(gameMechanics);
-		this.bggId = bggId;
+		this.boardGameGeekId = boardGameGeekId;
 	}
 
 	public UUID getId() {
@@ -55,7 +56,7 @@ public class BoardGame {
 		return gameMechanics;
 	}
 
-	public int getBggId() {
-		return bggId;
+	public Integer getBoardGameGeekId() {
+		return boardGameGeekId;
 	}
 }

@@ -20,9 +20,10 @@ public class PersistentBoardGame {
 	private int minPlayers;
 	private int maxPlayers;
 	private List<GameMechanic> gameMechanics;
+	private Integer boardGameGeekId;
 
 	public PersistentBoardGame(final UUID id, final String title, final String author, final String publisher, final int minPlayers,
-		final int maxPlayers, final List<GameMechanic> gameMechanics) {
+		final int maxPlayers, final List<GameMechanic> gameMechanics, final Integer boardGameGeekId) {
 
 		this.id = id;
 		this.title = title;
@@ -31,6 +32,7 @@ public class PersistentBoardGame {
 		this.minPlayers = minPlayers;
 		this.maxPlayers = maxPlayers;
 		this.gameMechanics = gameMechanics;
+		this.boardGameGeekId = boardGameGeekId;
 	}
 
 	public static PersistentBoardGame of(BoardGame boardGame) {
@@ -41,8 +43,8 @@ public class PersistentBoardGame {
 			boardGame.getPublisher(),
 			boardGame.getMinPlayers(),
 			boardGame.getMaxPlayers(),
-			boardGame.getGameMechanics()
-		);
+			boardGame.getGameMechanics(),
+			boardGame.getBoardGameGeekId());
 	}
 
 	BoardGame toBoardGame() {
@@ -54,7 +56,7 @@ public class PersistentBoardGame {
 			this.minPlayers,
 			this.maxPlayers,
 			this.gameMechanics,
-			bggId);
+			this.boardGameGeekId);
 	}
 
 	public UUID getId() {
@@ -83,5 +85,9 @@ public class PersistentBoardGame {
 
 	public List<GameMechanic> getGameMechanics() {
 		return gameMechanics;
+	}
+
+	public Integer getBoardGameGeekId() {
+		return boardGameGeekId;
 	}
 }
