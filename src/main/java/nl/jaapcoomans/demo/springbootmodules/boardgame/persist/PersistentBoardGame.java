@@ -3,13 +3,17 @@ package nl.jaapcoomans.demo.springbootmodules.boardgame.persist;
 import java.util.List;
 import java.util.UUID;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGame;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.GameMechanic;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document("boardgames")
+@Entity(name = "boardgame")
 public class PersistentBoardGame {
 	@Id
 	private UUID id;
@@ -19,8 +23,15 @@ public class PersistentBoardGame {
 	private String publisher;
 	private int minPlayers;
 	private int maxPlayers;
+
+	@ElementCollection
+	@Enumerated(EnumType.STRING)
+	@Column(name = "gameMechanics")
 	private List<GameMechanic> gameMechanics;
+
 	private Integer boardGameGeekId;
+
+	public PersistentBoardGame() {}
 
 	public PersistentBoardGame(final UUID id, final String title, final String author, final String publisher, final int minPlayers,
 		final int maxPlayers, final List<GameMechanic> gameMechanics, final Integer boardGameGeekId) {
@@ -89,5 +100,37 @@ public class PersistentBoardGame {
 
 	public Integer getBoardGameGeekId() {
 		return boardGameGeekId;
+	}
+
+	public void setId(final UUID id) {
+		this.id = id;
+	}
+
+	public void setTitle(final String title) {
+		this.title = title;
+	}
+
+	public void setAuthor(final String author) {
+		this.author = author;
+	}
+
+	public void setPublisher(final String publisher) {
+		this.publisher = publisher;
+	}
+
+	public void setMinPlayers(final int minPlayers) {
+		this.minPlayers = minPlayers;
+	}
+
+	public void setMaxPlayers(final int maxPlayers) {
+		this.maxPlayers = maxPlayers;
+	}
+
+	public void setGameMechanics(final List<GameMechanic> gameMechanics) {
+		this.gameMechanics = gameMechanics;
+	}
+
+	public void setBoardGameGeekId(final Integer boardGameGeekId) {
+		this.boardGameGeekId = boardGameGeekId;
 	}
 }

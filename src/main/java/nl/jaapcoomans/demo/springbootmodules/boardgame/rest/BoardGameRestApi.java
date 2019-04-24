@@ -38,7 +38,7 @@ public class BoardGameRestApi {
 
 	@GetMapping("/{id}")
 	public BoardGame getBoardGameById(@PathVariable UUID id) {
-		return this.boardGameQueryRepository.findById(id)
+		return this.boardGameQueryRepository.findBoardGameById(id)
 			.orElseThrow(ResourceNotFoundException::new);
 	}
 

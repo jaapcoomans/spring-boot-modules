@@ -58,7 +58,7 @@ public class BoardGameGeekRatingService implements GameRatingService {
 	}
 
 	private Optional<Integer> resolveBoardGameGeekId(UUID gameId) {
-		return this.boardGameQueryRepository.findById(gameId)
+		return this.boardGameQueryRepository.findBoardGameById(gameId)
 			.map(BoardGame::getBoardGameGeekId);
 	}
 }

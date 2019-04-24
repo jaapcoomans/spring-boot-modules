@@ -1,17 +1,18 @@
 package nl.jaapcoomans.demo.springbootmodules.boardgame.application;
 
+import javax.persistence.EntityManager;
+
 import nl.jaapcoomans.demo.springbootmodules.boardgame.bgg.BoardGameGeekRatingService;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGameCommandRepository;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGameQueryRepository;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGameService;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.GameRatingService;
-import nl.jaapcoomans.demo.springbootmodules.boardgame.persist.MongoBoardGameCommandRepository;
-import nl.jaapcoomans.demo.springbootmodules.boardgame.persist.MongoBoardGameQueryRepository;
+import nl.jaapcoomans.demo.springbootmodules.boardgame.persist.JpaBoardGameCommandRepository;
+import nl.jaapcoomans.demo.springbootmodules.boardgame.persist.JpaBoardGameQueryRepository;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.core.MongoTemplate;
 
 @Configuration
 public class BoardGameApplicationConfig {
@@ -24,13 +25,13 @@ public class BoardGameApplicationConfig {
 	}
 
 	@Bean
-	public BoardGameQueryRepository boardGameQueryRepository(MongoTemplate mongoTemplate) {
-		return new MongoBoardGameQueryRepository(mongoTemplate);
+	public BoardGameQueryRepository boardGameQueryRepository(EntityManager entityManager) {
+		return new JpaBoardGameQueryRepository(entityManager);
 	}
 
 	@Bean
-	public BoardGameCommandRepository boardGameCommandRepository(MongoTemplate mongoTemplate) {
-		return new MongoBoardGameCommandRepository(mongoTemplate);
+	public BoardGameCommandRepository boardGameCommandRepository(EntityManager entityManager) {
+		return new JpaBoardGameCommandRepository(entityManager);
 	}
 
 	@Bean

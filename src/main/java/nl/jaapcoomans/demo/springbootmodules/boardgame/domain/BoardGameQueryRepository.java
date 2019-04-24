@@ -7,5 +7,5 @@ import java.util.UUID;
 public interface BoardGameQueryRepository {
 	List<BoardGame> getAllBoardGames();
 
-	Optional<BoardGame> findById(UUID id);
+	Optional<BoardGame> findBoardGameById(UUID id);
 }
