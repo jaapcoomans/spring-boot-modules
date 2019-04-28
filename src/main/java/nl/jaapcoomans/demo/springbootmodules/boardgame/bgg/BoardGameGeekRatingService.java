@@ -15,33 +15,13 @@ import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGame;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGameQueryRepository;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.GameRatingService;
 
-import feign.Feign;
-import feign.Logger.ErrorLogger;
-import feign.Logger.Level;
-import feign.jaxb.JAXBContextFactory;
-import feign.jaxb.JAXBDecoder;
-import feign.jaxb.JAXBEncoder;
-
 public class BoardGameGeekRatingService implements GameRatingService {
 	private BoardGameGeekClient bggClient;
 	private BoardGameQueryRepository boardGameQueryRepository;
 
-	public BoardGameGeekRatingService(final String baseUrl, final BoardGameQueryRepository boardGameQueryRepository) {
-		this.bggClient = createClient(baseUrl);
+	public BoardGameGeekRatingService(final BoardGameGeekClient bggClient, final BoardGameQueryRepository boardGameQueryRepository) {
+		this.bggClient = bggClient;
 		this.boardGameQueryRepository = boardGameQueryRepository;
-	}
-
-	private BoardGameGeekClient createClient(String baseUrl) {
-		JAXBContextFactory jaxbFactory = new JAXBContextFactory.Builder()
-			.withMarshallerJAXBEncoding("UTF-8")
-			.build();
-
-		return Feign.builder()
-			.encoder(new JAXBEncoder(jaxbFactory))
-			.decoder(new JAXBDecoder(jaxbFactory))
-			.logger(new ErrorLogger())
-			.logLevel(Level.BASIC)
-			.target(BoardGameGeekClient.class, baseUrl);
 	}
 
 	@Override
