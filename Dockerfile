@@ -1,4 +1,4 @@
-FROM openjdk:8u181-slim
+FROM openjdk:11-slim
 
 WORKDIR /opt/application
 
