@@ -1,4 +1,4 @@
-package nl.jaapcoomans;
+package nl.jaapcoomans.boardgame.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

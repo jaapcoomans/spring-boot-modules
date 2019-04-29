@@ -1,4 +1,4 @@
-package nl.jaapcoomans.security.rest;
+package nl.jaapcoomans.boardgame.security.rest;
 
 public class LoginCommand {
 	private String username;

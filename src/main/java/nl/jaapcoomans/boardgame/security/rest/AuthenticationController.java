@@ -1,10 +1,10 @@
-package nl.jaapcoomans.security.rest;
+package nl.jaapcoomans.boardgame.security.rest;
 
 import static org.springframework.http.ResponseEntity.ok;
 
 import java.util.Collections;
 
-import nl.jaapcoomans.security.JwtTokenProvider;
+import nl.jaapcoomans.boardgame.security.JwtTokenProvider;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

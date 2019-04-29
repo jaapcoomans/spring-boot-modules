@@ -1,4 +1,4 @@
-package nl.jaapcoomans.security;
+package nl.jaapcoomans.boardgame.security;
 
 import java.security.Key;
 import java.time.Instant;

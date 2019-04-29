@@ -1,4 +1,4 @@
-package nl.jaapcoomans.security.rest;
+package nl.jaapcoomans.boardgame.security.rest;
 
 public class UserInfo {
 	private final String username;

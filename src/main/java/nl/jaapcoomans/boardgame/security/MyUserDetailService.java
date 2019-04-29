@@ -1,4 +1,4 @@
-package nl.jaapcoomans.security;
+package nl.jaapcoomans.boardgame.security;
 
 import java.util.Collection;
 import java.util.Collections;
