@@ -1,0 +1,15 @@
+package nl.jaapcoomans.boardgame.rest;
+
+import java.math.BigDecimal;
+
+public class Ratings {
+	private BigDecimal bggAverage;
+
+	public Ratings(final BigDecimal bggAverage) {
+		this.bggAverage = bggAverage;
+	}
+
+	public BigDecimal getBggAverage() {
+		return bggAverage;
+	}
+}
