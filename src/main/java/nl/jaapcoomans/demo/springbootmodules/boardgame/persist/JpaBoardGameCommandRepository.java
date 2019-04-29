@@ -8,7 +8,9 @@ import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGame;
 import nl.jaapcoomans.demo.springbootmodules.boardgame.domain.BoardGameCommandRepository;
 
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public class JpaBoardGameCommandRepository extends SimpleJpaRepository<PersistentBoardGame, UUID> implements BoardGameCommandRepository {
 	public JpaBoardGameCommandRepository(final EntityManager entityManager) {
 		super(PersistentBoardGame.class, entityManager);
