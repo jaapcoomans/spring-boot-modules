@@ -26,7 +26,8 @@
 
     <modules>
         <module>application</module>
-        <module>domain</module>
         <module>bgg-client</module>
+        <module>domain</module>
+        <module>persistence</module>
     </modules>
 </project>
