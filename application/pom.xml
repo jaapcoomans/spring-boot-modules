@@ -39,6 +39,11 @@
             <artifactId>boardgame-persistence</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>nl.jaapcoomans.demo.boardgame</groupId>
+            <artifactId>boardgame-rest-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
         <!-- Spring Framework -->
         <dependency>

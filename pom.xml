@@ -29,5 +29,6 @@
         <module>bgg-client</module>
         <module>domain</module>
         <module>persistence</module>
+        <module>rest-api</module>
     </modules>
 </project>
