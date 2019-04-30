@@ -36,7 +36,7 @@ public class AuthenticationController {
 			this.authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, loginCommand.getPassword()));
 			String token = this.jwtTokenProvider.createToken(username, Collections.emptyList());
 
-			return ok(new UserInfo(username, token));
+			return ResponseEntity.ok(new UserInfo(username, token));
 		} catch (AuthenticationException e) {
 			throw new BadCredentialsException("Invalid username/password supplied");
 		}

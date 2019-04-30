@@ -30,5 +30,6 @@
         <module>domain</module>
         <module>persistence</module>
         <module>rest-api</module>
+        <module>security</module>
     </modules>
 </project>
