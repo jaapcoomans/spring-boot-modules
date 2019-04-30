@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>nl.jaapcoomans.demo</groupId>
-    <artifactId>spring-boot-modules</artifactId>
+    <groupId>nl.jaapcoomans.demo.boardgame</groupId>
+    <artifactId>parent</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>Spring Boot Java Modules Demo</name>
-    <description>Demo project for Spring Boot</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -24,109 +24,7 @@
         <jjwt.version>0.10.5</jjwt.version>
     </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!-- PostGreSQL Driver -->
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>${postgresql.version}</version>
-        </dependency>
-
-        <!-- JWT -->
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-api</artifactId>
-            <version>${jjwt.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-impl</artifactId>
-            <version>${jjwt.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-jackson</artifactId>
-            <version>${jjwt.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- Feign -->
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-core</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-jaxb</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-slf4j</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
-
-        <!-- JAXB -->
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>${jaxb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-core</artifactId>
-            <version>${jaxb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>${jaxb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-
-        <!-- Test dependencies -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>application</module>
+    </modules>
 </project>
