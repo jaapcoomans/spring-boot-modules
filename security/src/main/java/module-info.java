@@ -1,4 +1,6 @@
 module nl.jaapcoomans.boardgame.security {
+	requires com.fasterxml.jackson.core;
+	requires com.fasterxml.jackson.databind;
 	requires spring.beans;
 	requires spring.context;
 	requires spring.security.core;
