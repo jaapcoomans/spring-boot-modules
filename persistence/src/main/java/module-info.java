@@ -5,5 +5,9 @@ module nl.jaapcoomans.boardgame.persistence {
 	requires spring.data.jpa;
 	requires spring.tx;
 
+	requires jdk.unsupported;
+
 	exports nl.jaapcoomans.boardgame.persist;
+
+	opens nl.jaapcoomans.boardgame.persist to org.hibernate.orm.core, spring.core;
 }
