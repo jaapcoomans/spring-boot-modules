@@ -2,7 +2,7 @@ package nl.jaapcoomans.boardgame.application;
 
 import javax.persistence.EntityManager;
 
-import nl.jaapcoomans.boardgame.bgg.api.BoardGameGeekRatingServiceFactory;
+import nl.jaapcoomans.boardgame.bgg.factory.BoardGameGeekRatingServiceFactory;
 import nl.jaapcoomans.boardgame.domain.BoardGameCommandRepository;
 import nl.jaapcoomans.boardgame.domain.BoardGameQueryRepository;
 import nl.jaapcoomans.boardgame.domain.BoardGameService;

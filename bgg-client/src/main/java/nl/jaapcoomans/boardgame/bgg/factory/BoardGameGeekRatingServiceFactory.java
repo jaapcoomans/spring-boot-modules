@@ -1,4 +1,4 @@
-package nl.jaapcoomans.boardgame.bgg.api;
+package nl.jaapcoomans.boardgame.bgg.factory;
 
 import nl.jaapcoomans.boardgame.bgg.BoardGameGeekClient;
 import nl.jaapcoomans.boardgame.bgg.BoardGameGeekRatingService;
