@@ -7,6 +7,9 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import nl.jaapcoomans.boardgame.security.jackson.JacksonJwtDeserializer;
+import nl.jaapcoomans.boardgame.security.jackson.JacksonJwtSerializer;
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -36,6 +39,7 @@ public class JwtTokenProvider {
 		Date now = Date.from(Instant.now());
 		Date validity = new Date(now.getTime() + validityInMilliseconds);
 		return Jwts.builder()
+			.serializeToJsonWith(new JacksonJwtSerializer<>())
 			.setClaims(claims)
 			.setIssuedAt(now)
 			.setExpiration(validity)
@@ -53,7 +57,9 @@ public class JwtTokenProvider {
 
 	boolean validateToken(final String token) {
 		try {
-			Jws<Claims> claims = Jwts.parser().setSigningKey(signingKey).parseClaimsJws(token);
+			Jws<Claims> claims = Jwts.parser()
+				.deserializeJsonWith(new JacksonJwtDeserializer<>())
+				.setSigningKey(signingKey).parseClaimsJws(token);
 			if (claims.getBody().getExpiration().before(Date.from(Instant.now()))) {
 				return false;
 			}
@@ -69,6 +75,8 @@ public class JwtTokenProvider {
 	}
 
 	private String getUsernameFromToken(final String token) {
-		return Jwts.parser().setSigningKey(signingKey).parseClaimsJws(token).getBody().getSubject();
+		return Jwts.parser()
+			.deserializeJsonWith(new JacksonJwtDeserializer<>())
+			.setSigningKey(signingKey).parseClaimsJws(token).getBody().getSubject();
 	}
 }
