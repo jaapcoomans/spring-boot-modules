@@ -4,6 +4,7 @@ module nl.jaapcoomans.boardgame.application {
 	requires nl.jaapcoomans.boardgame.rest;
 	requires nl.jaapcoomans.boardgame.security;
 
+	requires java.instrument;
 	requires java.sql;
 	requires net.bytebuddy;
 	requires spring.boot;
