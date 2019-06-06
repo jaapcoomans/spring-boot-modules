@@ -1,7 +1,9 @@
-FROM openjdk:11-slim
+FROM openjdk:11.0.3-slim
 
 WORKDIR /opt/application
 
-COPY ./*.jar ./application.jar
+COPY application/target/modules/3rdparty/* ./modules/
+COPY application/target/modules/application/* ./modules/
+COPY application/target/*.jar ./application.jar
 
-ENTRYPOINT java -jar application.jar
+ENTRYPOINT java -p /opt/application/:/opt/application/modules/ -m nl.jaapcoomans.boardgame.application
