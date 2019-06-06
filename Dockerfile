@@ -1,4 +1,4 @@
-FROM openjdk:11.0.3-slim
+FROM adoptopenjdk/openjdk11:jre-11.0.3_7-alpine
 
 WORKDIR /opt/application
 
