@@ -12,16 +12,16 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.4.RELEASE</version>
+        <version>2.1.7.RELEASE</version>
         <relativePath/>
     </parent>
 
     <properties>
         <java.version>11</java.version>
         <!-- Dependency versions -->
-        <feign.version>10.1.0</feign.version>
+        <feign.version>10.4.0</feign.version>
         <jaxb.version>2.3.0</jaxb.version>
-        <jjwt.version>0.10.5</jjwt.version>
+        <jjwt.version>0.10.7</jjwt.version>
     </properties>
 
     <modules>
