@@ -6,7 +6,6 @@ module nl.jaapcoomans.boardgame.application {
 
 	requires java.instrument;
 	requires java.sql;
-	requires net.bytebuddy;
 	requires spring.boot;
 	requires spring.boot.autoconfigure;
 	requires spring.beans;
