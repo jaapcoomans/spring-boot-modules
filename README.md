@@ -23,7 +23,22 @@ The application essentially consists of 6 modules: `domain`, `persistence`, `res
 - `rest-api` implements the REST API using Spring Web. Depends on `domain`
 - `bgg-client` implements a client to the BoardGameGeek XML API using JAX-B and OpenFeign. Depends on `domain`.
 - `security` implements the security configuration using Spring Security and jjwt. Has no internal dependencies.
-- `application` is the module that pulls it all together. Depends on all other modules and Spring Boot. This is the main module. 
+- `application` is the module that pulls it all together. Depends on all other modules and Spring Boot. This is the main module.
+
+## Building and running the application
+
+To build the application from the command line, simply run Maven from the root of the repository.
+```
+mvn package
+``` 
+After this you can either build the Docker image separately or use docker-compose to run both the application and the PostgreSQL database. 
+A setup for this is included in the `/local` folder. 
+You can start the database and the application by running docker-compose in the `/local` folder. 
+
+```
+cd local
+docker-compose up -d
+```
 
 ## Conferences
 This talk was given at the following conferences:
