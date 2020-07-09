@@ -6,4 +6,6 @@ module nl.jaapcoomans.boardgame.bgg {
 	requires feign.jaxb;
 
 	exports nl.jaapcoomans.boardgame.bgg.factory;
+
+	opens nl.jaapcoomans.boardgame.bgg.xmlapi to java.xml.bind;
 }

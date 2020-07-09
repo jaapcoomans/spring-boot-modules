@@ -7,6 +7,9 @@ module nl.jaapcoomans.boardgame.security {
 	requires spring.security.web;
 	requires spring.web;
 
+	requires com.fasterxml.jackson.core;
+	requires com.fasterxml.jackson.databind;
+
 	requires jjwt.api;
 
 	exports nl.jaapcoomans.boardgame.security;
