@@ -1,9 +1,7 @@
 module nl.jaapcoomans.boardgame.bgg {
-	requires nl.jaapcoomans.boardgame.domain;
+	requires transitive nl.jaapcoomans.boardgame.domain;
 
-	requires com.sun.xml.bind;
 	requires java.xml.bind;
-
 	requires feign.core;
 	requires feign.jaxb;
 

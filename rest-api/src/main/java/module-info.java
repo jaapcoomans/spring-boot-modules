@@ -1,5 +1,5 @@
 module nl.jaapcoomans.boardgame.rest {
-	requires nl.jaapcoomans.boardgame.domain;
+	requires transitive nl.jaapcoomans.boardgame.domain;
 
 	requires spring.web;
 

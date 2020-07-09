@@ -1,6 +1,5 @@
 module nl.jaapcoomans.boardgame.security {
-	requires com.fasterxml.jackson.core;
-	requires com.fasterxml.jackson.databind;
+	requires org.apache.tomcat.embed.core;
 	requires spring.beans;
 	requires spring.context;
 	requires spring.security.core;
@@ -8,8 +7,10 @@ module nl.jaapcoomans.boardgame.security {
 	requires spring.security.web;
 	requires spring.web;
 
+	requires com.fasterxml.jackson.core;
+	requires com.fasterxml.jackson.databind;
+
 	requires jjwt.api;
-	requires tomcat.embed.core;
 
 	exports nl.jaapcoomans.boardgame.security;
 	exports nl.jaapcoomans.boardgame.security.rest;
