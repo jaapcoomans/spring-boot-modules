@@ -23,6 +23,9 @@
         <feign.version>11.0</feign.version>
         <jaxb.version>2.3.3</jaxb.version>
         <jjwt.version>0.11.2</jjwt.version>
+
+        <!-- Overwrite Spring Boot dependency versions -->
+        <hikaricp.version>3.4.3</hikaricp.version>
     </properties>
 
     <modules>
