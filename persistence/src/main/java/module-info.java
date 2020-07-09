@@ -1,7 +1,7 @@
 module nl.jaapcoomans.boardgame.persistence {
-	requires nl.jaapcoomans.boardgame.domain;
+	requires transitive nl.jaapcoomans.boardgame.domain;
 
-	requires java.persistence;
+	requires transitive java.persistence;
 	requires spring.data.jpa;
 	requires spring.tx;
 
