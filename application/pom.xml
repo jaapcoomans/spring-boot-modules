@@ -27,6 +27,7 @@
                         </goals>
                         <configuration>
                             <excludeGroupIds>nl.jaapcoomans.demo.boardgame</excludeGroupIds>
+                            <excludeGroupIds>jakarta.activation</excludeGroupIds>
                             <outputDirectory>target/modules/3rdparty</outputDirectory>
                         </configuration>
                     </execution>
