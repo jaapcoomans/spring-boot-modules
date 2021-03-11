@@ -28,8 +28,10 @@ The application essentially consists of 6 modules: `domain`, `persistence`, `res
 ## Conferences
 This talk was given at the following conferences:
 
-| Conference      | Date         | Session details |
-|-----------------|--------------|-----------------|
-| Devoxx UK       | 10 May 2019  | [Session details](https://devoxxuk19.confinabox.com/talk/JOK-2933/Migrating_your_Spring_Boot_application_to_Java_Modules) |
-| Spring I/O      | 16 May 2019  | [Session details](https://2019.springio.net/sessions/java-modules-in-practice-with-spring-boot ) |
-| Oracle Code One | 17 Sept 2019 | [Session details](https://events.rainfocus.com/widget/oracle/oow19/catalogcodeone19?search=dev1301) |
+| Conference         | Date              | Session details |
+|--------------------|-------------------|-----------------|
+| Devoxx UK          | 10 May 2019       | [Session details](https://devoxxuk19.confinabox.com/talk/JOK-2933/Migrating_your_Spring_Boot_application_to_Java_Modules) |
+| Spring I/O         | 16 May 2019       | [Session details](https://2019.springio.net/sessions/java-modules-in-practice-with-spring-boot ) |
+| Oracle Code One    | 17 September 2019 | [Session details](https://events.rainfocus.com/widget/oracle/oow19/catalogcodeone19?search=dev1301) |
+| Java Global Summit | 1 August 2020     | [Session details](https://java.geekle.us/) |
+| JavaLand           | 17 March 2021     | [Session details](https://programm.javaland.eu/2021/#/scheduledEvent/606347) |
