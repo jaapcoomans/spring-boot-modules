@@ -16,7 +16,7 @@ import nl.jaapcoomans.boardgame.domain.command.CreateBoardGameCommand;
 
 import org.junit.jupiter.api.Test;
 
-class BoardGameServiceTest {
+public class BoardGameServiceTest {
 	private static final String TITLE = "El Grande";
 	private static final String PUBLISHER = "999 Games";
 	private static final String AUTHOR = "Wolfgang Kramer, Richard Ulrich";
@@ -28,7 +28,7 @@ class BoardGameServiceTest {
 	private BoardGameCommandRepository commandRepository = mock(BoardGameCommandRepository.class);
 
 	@Test
-	void create_command_results_in_creation_and_persistence_of_new_game() {
+	public void create_command_results_in_creation_and_persistence_of_new_game() {
 		// Given
 		BoardGameService boardGameService = new BoardGameService(commandRepository);
 		CreateBoardGameCommand createBoardGameCommand = createBoardGameCommand();
