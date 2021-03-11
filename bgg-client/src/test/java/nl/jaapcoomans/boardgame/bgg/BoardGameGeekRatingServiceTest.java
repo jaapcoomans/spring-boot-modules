@@ -21,7 +21,7 @@ import nl.jaapcoomans.boardgame.domain.BoardGameQueryRepository;
 
 import org.junit.jupiter.api.Test;
 
-class BoardGameGeekRatingServiceTest {
+public class BoardGameGeekRatingServiceTest {
 	private static final UUID GAME_ID = UUID.randomUUID();
 	private static final int BGG_ID = 42;
 
@@ -29,7 +29,7 @@ class BoardGameGeekRatingServiceTest {
 	private BoardGameQueryRepository queryRepository = mock(BoardGameQueryRepository.class);
 
 	@Test
-	void rating_for_known_boardgame_is_successfully_returned() {
+	public void rating_for_known_boardgame_is_successfully_returned() {
 		//Given
 		BoardGameGeekRatingService boardGameGeekRatingService = new BoardGameGeekRatingService(bggClient, queryRepository);
 		when(queryRepository.findBoardGameById(GAME_ID)).thenReturn(Optional.of(createBoardGame(BGG_ID)));
@@ -44,7 +44,7 @@ class BoardGameGeekRatingServiceTest {
 	}
 
 	@Test
-	void rating_for_unknown_boardgame_is_empty_optional() {
+	public void rating_for_unknown_boardgame_is_empty_optional() {
 		//Given
 		BoardGameGeekRatingService boardGameGeekRatingService = new BoardGameGeekRatingService(bggClient, queryRepository);
 		when(queryRepository.findBoardGameById(GAME_ID)).thenReturn(Optional.empty());
@@ -57,7 +57,7 @@ class BoardGameGeekRatingServiceTest {
 	}
 
 	@Test
-	void rating_for_game_without_bgg_id_is_empty_optional() {
+	public void rating_for_game_without_bgg_id_is_empty_optional() {
 		//Given
 		BoardGameGeekRatingService boardGameGeekRatingService = new BoardGameGeekRatingService(bggClient, queryRepository);
 		when(queryRepository.findBoardGameById(GAME_ID)).thenReturn(Optional.of(createBoardGame(null)));
