@@ -1,5 +1,5 @@
 module nl.jaapcoomans.boardgame.bgg {
-	requires transitive nl.jaapcoomans.boardgame.domain;
+	requires  nl.jaapcoomans.boardgame.domain;
 
 	requires java.xml.bind;
 	requires feign.core;
