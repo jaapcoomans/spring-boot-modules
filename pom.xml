@@ -22,6 +22,8 @@
         <feign.version>11.0</feign.version>
         <jaxb.version>2.3.3</jaxb.version>
         <jjwt.version>0.11.2</jjwt.version>
+
+        <hikaricp.version>4.0.3</hikaricp.version>
     </properties>
 
     <modules>

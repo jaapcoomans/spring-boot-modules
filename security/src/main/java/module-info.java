@@ -13,4 +13,6 @@ module nl.jaapcoomans.boardgame.security {
 
     exports nl.jaapcoomans.boardgame.security;
     exports nl.jaapcoomans.boardgame.security.rest;
+
+    opens nl.jaapcoomans.boardgame.security to spring.core;
 }
